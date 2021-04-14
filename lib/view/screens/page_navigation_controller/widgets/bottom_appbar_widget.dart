@@ -11,8 +11,8 @@ class BottomAppBarWidgets extends StatelessWidget {
       builder: (val) => BottomAppBar(
         child: Container(
           color: Color.fromRGBO(243, 244, 245, 1),
-          width: size.height,
-          height: 60,
+          width: size.width,
+          height: size.height * .1,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: val.bottomItems.map((e) {

@@ -8,13 +8,11 @@ class ApiServices {
       '${Constant.BASEURL}/${Constant.APPID}/${Constant.APIKEY}';
 
   Future login(email, password) async {
-    var url = APIURL + '/user/login';
+    var url = APIURL + '/users/login';
     Object data = json.encode({
-      {
-        "login": email,
-        "password": password,
-      }
-    }.toString());
+      "login": email,
+      "password": password,
+    });
 
     http.Response response = await http.post(url, body: data);
     if (response.statusCode == 200) {
@@ -24,15 +22,13 @@ class ApiServices {
   }
 
   Future register(String name, String email, String password) async {
-    var url = APIURL + '/user/register';
+    var url = APIURL + '/users/register';
     print(url);
     Object data = json.encode({
-      {
-        "name": name,
-        "email": email,
-        "password": password,
-      }
-    }.toString());
+      "name": name,
+      "email": email,
+      "password": password,
+    });
 
     http.Response response = await http.post(url, body: data);
     if (response.statusCode == 200) {
